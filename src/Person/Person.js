@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 import './Person.css';
 
 const Person = ({ click, name, age, changed }) => {
@@ -12,4 +13,4 @@ const Person = ({ click, name, age, changed }) => {
   );
 };
 
-export default Person;
+export default Radium(Person);
