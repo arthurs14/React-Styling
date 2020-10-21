@@ -1,6 +1,22 @@
 import React from 'react';
-import Radium from 'radium';
-import './Person.css';
+import styled from 'styled-components';
+//import './Person.css';
+
+const StyledDiv = styled.div`
+  width: 60%;
+  margin: 16px auto;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 16px;
+  text-align: center;
+
+
+  @media (min-width: 500px) {
+    .Person {
+      width: 450px;
+    }
+  }
+`;
 
 const Person = ({ click, name, age, changed }) => {
   const style = {
@@ -10,13 +26,19 @@ const Person = ({ click, name, age, changed }) => {
   };
 
   return (
-    <div className="Person" style={style}>
+    // <div className="Person" style={style}>
+    //   <p onClick={click}>
+    //     I'm {name} and I am {age} years old!
+    //   </p>
+    //   <input type="text" onChange={changed} value={name} />
+    // </div>
+    <StyledDiv>
       <p onClick={click}>
-        I'm {name} and I am {age} years old!
+        {`I'm ${name} and I am ${age} years old!`}
       </p>
       <input type="text" onChange={changed} value={name} />
-    </div>
+    </StyledDiv>
   );
 };
 
-export default Radium(Person);
+export default Person;
