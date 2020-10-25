@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+
+// Use for cases you know you can control or prevent
+// Nice tool for production
 class ErrorBoundary extends Component {
   state = {
     hasError: false,
@@ -12,7 +15,7 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong</h1>
+      return <h1>{this.state.errorMessage}</h1>
     } else {
       return this.props.children;
     }
